@@ -132,6 +132,7 @@ function getChel(){
        alert ("Слово било " + word +". " + "Ти не угадал бро" )
        getWord ()
        ctx.clearRect(0,0,canvas.width,canvas.height)
+       attempts = 9
      }
  }
  page.addEventListener("keydown", function(event) {
