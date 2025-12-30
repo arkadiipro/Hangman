@@ -1,19 +1,55 @@
 
 let page = document;
-/*let button = document.getElementById("but"); */let attempts = 10;let attempt = null;let words = ["arkadii","love","zlata","and","brat","mark","sun", "moon", "star", "water", "fire", "earth", "air", "house", "tree", "flower", "book", "pen", "desk", "chair", "computer", "phone", "music", "road", "car", "city", "village", "time", "idea", "joy", "sadness", "truth", "lie", "good", "evil", "path", "goal", "dream", "work", "rest", "food", "clothes", "wind", "night", "morning", "evening", "mountain", "river", "forest", "field", "bird", "fish", "stone", "sand", "glass", "iron"];
-let word = words[Math.floor(Math.random() * words.length)];
-
-let answerArray = []
-for(var i = 0; i < word.length ; i++) {
- answerArray[i] = "_"
-}
-let remainingLetters = word.length;
+/*let button = document.getElementById("but"); */
+let attempts = 10;
+let attempt = null;
+let words = [
+  "arkadii",
+  "love",
+  "zlata",
+  "and",
+  "brat",
+  "mark",
+  "sun",
+  "moon",
+  "star",
+  "water",
+  "fire",
+  "earth",
+  "air",
+  "house",
+  "tree",
+  "flower",
+  "book",
+  "pen",
+  "desk",
+  "chair",
+  "computer",
+  "phone",
+  "music",
+  "road",
+  "car",
+  "city", "village", "time", "idea", "joy", "sadness",
+  "truth", "lie", "good", "evil", "path", "goal", "dream",
+  "work", "rest", "food", "clothes", "wind", "night", "morning",
+  "evening", "mountain", "river", "forest", "field", "bird", "fish", 
+  "stone", "sand", "glass", "iron"];
+  let word = null;
+  let answerArray = [];
+  let remainingLetters = null;
+ function getWord () {
+  word = words[Math.floor(Math.random() * words.length)];
+  for(var i = 0; i < word.length ; i++) {
+    answerArray[i] = "_"
+   }
+   remainingLetters = word.length;
+ }
 let p = document.getElementById("word1") 
  function check(){
      if(remainingLetters === 0){
-         alert("Слово било " + answerArray.join("") + " Харош бро")
+         alert("Слово било " + word + " Харош бро")
      } else if (attempts !== 0){
-         getWord()
+         
      } else {
          alert("У вас 0 попиток, начните заново.")
      }
@@ -94,7 +130,8 @@ function getChel(){
          ctx.stroke()
      } else if (attempts === 0 ){
        alert ("Слово било " + word +". " + "Ти не угадал бро" )
-       $("#but").innerHtml
+       getWord ()
+       ctx.clearRect(0,0,canvas.width,canvas.height)
      }
  }
  page.addEventListener("keydown", function(event) {
@@ -117,4 +154,7 @@ function getChel(){
          if (remainingLetters === 0) {
           alert("Слово било " + answerArray.join("") + " Харош бро")
       }
+
+      
  })
+ getWord ()
