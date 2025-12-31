@@ -38,11 +38,13 @@ let words = [
   let answerArray = [];
   let remainingLetters = null;
  function getWord () {
+    answerArray = [];
   word = words[Math.floor(Math.random() * words.length)];
   for(var i = 0; i < word.length ; i++) {
     answerArray[i] = "_"
    }
    remainingLetters = word.length;
+   p.innerText = answerArray.join(" ")
  }
 let p = document.getElementById("word1") 
  function check(){
@@ -131,17 +133,19 @@ function getChel(){
      } else if (attempts === 0 ){
        alert ("Слово било " + word +". " + "Ти не угадал бро" )
        getWord ()
+       p.innerText = answerArray.join(" ")
        ctx.clearRect(0,0,canvas.width,canvas.height)
-       attempts = 9
+       attempts = 10
      }
  }
  page.addEventListener("keydown", function(event) {
-     
+  if (event.key.length !== 1) return;
+  let guess = event.key.toLowerCase();
          attempt = remainingLetters
          for (var j = 0; j < word.length; j++){
 
-             if(word[j] === event.key) {
-                 answerArray[j] = event.key;
+             if(word[j] === guess && answerArray[j] === "_") {
+                 answerArray[j] = guess;
                  remainingLetters--
              } 
              
