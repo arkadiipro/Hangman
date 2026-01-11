@@ -4,12 +4,6 @@ let page = document;
 let attempts = 10;
 let attempt = null;
 let words = [
-  "arkadii",
-  "love",
-  "zlata",
-  "and",
-  "brat",
-  "mark",
   "sun",
   "moon",
   "star",
@@ -33,7 +27,13 @@ let words = [
   "truth", "lie", "good", "evil", "path", "goal", "dream",
   "work", "rest", "food", "clothes", "wind", "night", "morning",
   "evening", "mountain", "river", "forest", "field", "bird", "fish", 
-  "stone", "sand", "glass", "iron"];
+  "stone", "sand", "glass", "iron"
+  "arkadii",
+  "love",
+  "zlata",
+  "and",
+  "brat",
+  "mark",];
   let word = null;
   let answerArray = [];
   let remainingLetters = null;
@@ -163,3 +163,4 @@ function getChel(){
       
  })
  getWord ()
+
